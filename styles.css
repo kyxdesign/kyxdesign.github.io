@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.labas {
+    width: 300px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e9e9e9;
+    color: rgb(49, 49, 49);
+    border-radius: 20px;
+    text-align: center;
+    transition: width 0.3s, transform 0.8s, color 0.8s; 
+    font-size: large;
+    font-weight: lighter;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.labas:hover {
+    width: 500px;
+    transform: scale(1.2);
+    color: black;
+}
+
