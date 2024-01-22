@@ -6,9 +6,13 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Poppins', sans-serif;
+    cursor: none;
+    background-color: white;
 }
 
 .labas {
+    position: relative; /* Added position: relative; */
+    z-index: 1; /* Added z-index to ensure it's above the cursor */
     width: 300px;
     padding: 20px;
     background-color: #ffffff;
@@ -16,7 +20,7 @@ body {
     color: rgb(49, 49, 49);
     border-radius: 20px;
     text-align: center;
-    transition: width 0.3s, transform 0.8s, color 0.8s; 
+    transition: width 0.3s, transform 0.8s, color 0.8s;
     font-size: large;
     font-weight: lighter;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -28,3 +32,13 @@ body {
     color: black;
 }
 
+#custom-cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: width 0.3s, height 0.3s;
+    z-index: 999; /* Ensure the cursor is above other elements */
+}
