@@ -7,7 +7,7 @@ body {
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     cursor: none;
-    background-color: white;
+    background-color: #0C0C0C;
 }
 
 .labas {
@@ -38,7 +38,61 @@ body {
     height: 20px;
     border-radius: 50%;
     pointer-events: none;
-    mix-blend-mode: difference;
+    background-color: white; /* Set default background color */
+    mix-blend-mode: exclusion; /* Use exclusion for better visibility */
     transition: width 0.3s, height 0.3s;
-    z-index: 999; /* Ensure the cursor is above other elements */
+    z-index: 20;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-text {
+    display: flex;
+    opacity: 1;
+    transform: scale(0.75);
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.main-text span {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.7);
+    animation: enterAnimation 1.5s ease-out forwards;
+}
+
+@keyframes enterAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px) scale(0.7);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(0) scale(0.7);
+    }
+    75% {
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(0.75);
+    }
+}
+
+.main-text span:nth-child(1) { animation-delay: 0.1s; }
+.main-text span:nth-child(2) { animation-delay: 0.2s; }
+.main-text span:nth-child(3) { animation-delay: 0.3s; }
+.main-text span:nth-child(4) { animation-delay: 0.4s; }
+.main-text span:nth-child(5) { animation-delay: 0.5s; }
+.main-text span:nth-child(6) { animation-delay: 0.6s; }
+.main-text span:nth-child(7) { animation-delay: 0.7s; }
+
+@media screen and (max-width: 48em) {
+    .main-text {
+        text-align: left;
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
 }

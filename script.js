@@ -1,19 +1,28 @@
 document.addEventListener('mousemove', (e) => {
     const cursor = document.getElementById('custom-cursor');
-    const hoveredElement = document.elementFromPoint(e.clientX, e.clientY);
 
-    if (hoveredElement) {
-        const { color, backgroundColor } = getComputedStyle(hoveredElement);
+    // Invert color function
+    const invertColor = (c) => 255 - parseInt(c, 10);
 
-        // Helper function to invert color
-        const invertColor = (c) => 255 - parseInt(c, 10);
+    // Get inverted RGB style
+    const getInvertedRGBStyle = () => {
+        const { color, backgroundColor } = getComputedStyle(document.body);
 
         // Function to apply color inversion
         const invertRGB = (rgb) => rgb.replace(/\d+/g, invertColor);
 
-        // Set cursor position and inverted color
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        cursor.style.background = color ? invertRGB(color) : invertRGB(backgroundColor);
-    }
+        // Return inverted RGB style
+        return {
+            color: color ? invertRGB(color) : 'white',
+            backgroundColor: backgroundColor ? invertRGB(backgroundColor) : 'black',
+        };
+    };
+
+    // Get inverted color styles
+    const invertedStyles = getInvertedRGBStyle();
+
+    // Set cursor position and inverted color
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    cursor.style.background = invertedStyles.color;
 });
