@@ -1,0 +1,88 @@
+
+
+
+body {
+    font-family: 'Helvetica Now Text'; 
+    
+}
+#nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 95%;
+    font-size: 0.75rem;
+   /* background-color: rgb(48, 48, 48); */
+    letter-spacing: -0.05em;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+#nav-container-container {
+    flex: 1; /* Fill remaining space */
+}
+
+header li {
+    list-style: none;
+    line-height: 1;
+}
+
+header li a {
+    color: #D9D9D9;
+    text-decoration: none;
+}
+
+
+
+#favicon {
+    transform: scale(0.85);
+    justify-content: flex-start;
+}
+
+ul {
+    width: 69%;
+    display: flex;
+}
+
+li:nth-child(1) {
+    width: 50%;
+}
+
+li:nth-child(2) {
+    width: 33.33%;
+}
+
+li:nth-child(3) {
+    width: 33.33%;
+    text-align: right;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+
+    li:nth-child(1) {
+       
+        display: none;
+    }
+    
+    li:nth-child(2) {
+        
+        display: none;
+    }
+
+    li:nth-child(3) {
+        width: 100%;
+        text-align: right;
+    }
+
+    #favicon {
+        transform: scale(0.7) translateY(30%);
+    }
+    
+}
