@@ -19,7 +19,7 @@ body {
     transform: translateX(-50%); /* Center horizontally */
     width: 95%;
     font-size: 0.75rem;
-   background-color: rgb(48, 48, 48); 
+
     letter-spacing: -0.05em;
     z-index: 1000; /* Ensure it's above other content */
 }

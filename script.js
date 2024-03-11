@@ -59,4 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         element.addEventListener('mouseenter', handleCursorSize);
         element.addEventListener('mouseleave', resetCursorSize);
     });
+
+    
 });
