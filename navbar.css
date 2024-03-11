@@ -5,6 +5,9 @@ body {
     font-family: 'Helvetica Now Text'; 
     
 }
+
+
+
 #nav-container {
     display: flex;
     flex-direction: row;
@@ -16,7 +19,7 @@ body {
     transform: translateX(-50%); /* Center horizontally */
     width: 95%;
     font-size: 0.75rem;
-   /* background-color: rgb(48, 48, 48); */
+   background-color: rgb(48, 48, 48); 
     letter-spacing: -0.05em;
     z-index: 1000; /* Ensure it's above other content */
 }
@@ -63,8 +66,13 @@ li:nth-child(3) {
 li a:hover {
     text-decoration: underline;
 }
+li:nth-child(4) {
+    width: 100%;
+    text-align: right;
+    display: none;
+}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 750px) {
 
     li:nth-child(1) {
        
@@ -75,14 +83,28 @@ li a:hover {
         
         display: none;
     }
-
     li:nth-child(3) {
+        
+        display: none;
+    }
+
+
+    li:nth-child(4) {
         width: 100%;
         text-align: right;
+        display: block;
+        font-size: 2.4rem;
+        line-height:1.2;
+    }
+
+    li a:hover {
+        text-decoration: none;
     }
 
     #favicon {
-        transform: scale(0.7) translateY(30%);
+        transform: scale(0.85) translateY(15%);
     }
+
+
     
 }
