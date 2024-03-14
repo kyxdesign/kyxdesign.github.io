@@ -12,10 +12,19 @@
     src: url('helvetica/HelveticaNowText-Medium.otf') format('opentype'); /* Specify the path to your font file */
 }
 
+@font-face {
+    font-family: 'Helvetica Now Text Light';
+    src: url('helvetica/HelveticaNowText-Light.otf') format('opentype'); /* Specify the path to your font file */
+}
+
+
+a{
+    text-decoration: none;
+}
 body {
     margin: 0;
     padding: 0;
-    display: flex;
+    
     
     
     height: 100vh;
@@ -27,7 +36,7 @@ body {
 
 
 #custom-cursor {
-    position: absolute;
+    position: fixed;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
@@ -86,14 +95,25 @@ body.animate .start {
     max-width: 100%; /* Adjust maximum width as needed */
 }
 
-#landing-container{
-    display: flex;
-    flex-direction: column;
-    
-    margin-top: 7rem;
+#site-container{
+  
     width: 95%;
     margin-left: 2.5%;
+    position: relative;
+    margin-bottom: 25rem; /* Add margin bottom to accommodate the footer */
+}
+
+#landing-container{
+    
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 7rem;
+
+   
     margin-bottom: 2.5%;
+   
     overflow: hidden;
 }
 #title {
@@ -114,7 +134,7 @@ body.animate .start {
 
 #subs{
     display: inline-flex;
-    font-family: 'Helvetica Now Text';
+    font-family: 'Helvetica Now Text Light';
     color: #D9D9D9;
     margin-left: 0.2%;
    
@@ -131,28 +151,202 @@ body.animate .start {
     margin-top: clamp(-2rem, 2vw, 2rem); /* Adjust the values as needed */
 }
 
-#photo{
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin-top: clamp(0rem, 2rem, 6rem);
-    width: 100%;
-    display: flex;
-    height: 100%;
-    background-image: url('bg.jpg');
-    background-size: cover; 
-   
-    background-position: center;
 
-}
 
 #projects-btn{
    background-color: #4680C4;
 }
 
+
+
+
+
+
+
+
+#paragraph-container {
+  
+    margin-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align items horizontally */
+    height: 10rem;
+}
+
+#paragraph {
+   
+    padding: 20px;
+    font-family: 'Helvetica Now Text Medium';
+    width: 49rem;
+    color: #D9D9D9;
+    font-size: 2.5em;
+    letter-spacing: -0.05em;
+   
+}
+
+#para-logo{
+    transform: scale(0.8);
+    transform: translateY(17%);
+}
+
+#buttons-container {
+    display: flex;
+   
+    margin-top: 10px; /* Adjust spacing between paragraph and buttons */
+    width: 49rem;
+
+}
+
+#message, #cv {
+    color: #D9D9D9;
+    font-family: 'Helvetica Now Text Light';
+   font-size: 1.2rem;
+    
+}
+
+#message:hover {
+text-decoration: underline;
+
+}
+
+#cv:hover {
+    text-decoration: underline;
+    
+    }
+
+#message{
+    text-align: left;
+    width: 50%;
+}
+
+footer {
+    
+   
+    background-color: #101010;
+    height: 25rem;
+    width: 100% ;
+    display:flex;
+    flex-direction: row;
+    
+    
+}
+
+#left{
+    
+    font-family: 'Helvetica Now Text';
+    width: 50%;
+    height: 50%;
+    margin-top:1rem;
+    margin-left:2.5%;
+}
+
+
+#heading{
+    font-size: 3rem;
+    color:#D9D9D9;
+
+}
+
+#subhead{
+    color:#D9D9D9;
+    margin-top:5rem;
+    font-size: 1.5rem;
+    font-family: 'Helvetica Now Text Light';
+    line-height: 0.5;
+}
+
+#copyright{
+    font-family: 'Helvetica Now Text Light';
+    font-size: 1rem;
+    margin-top:5rem;
+    color:#838383;
+}
+
+#right{
+    
+    width: 50%;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: flex-start; /* Align items to the top */
+  
+}
+
+#footer-logo{
+    margin-top: 4rem;
+    margin-right: 5%;
+   height: 10rem;
+}
+
+
+
+
+
 @media screen and (max-width: 750px) {
 
+    #project-container {
+        grid-template-columns: repeat(1, 1fr); /* 3 columns */
 
+    
+    }
 
+    #paragraph {
+   
+
+        width: 100%;
+
+    }
+
+    #buttons-container {
+        width: 100%;
+    
+    }
+
+    #paragraph-container {
+  
+        margin-top: 5rem;
+        height: 20rem;
+    }
+
+    #buttons-container {
+        line-height: 2rem;
+        width: 100%;
+        display: flex;
+       flex-direction: column;
+
+    
+    }
+
+    #footer-logo{
+        margin-top: 3rem;
+        height: 5rem;
+    }
+    
+    #message, #cv {
+        color: #D9D9D9;
+        font-family: 'Helvetica Now Text Light';
+       font-size: 1rem;
+        
+    }
+
+    
+#heading{
+    font-size: 2rem;
+    color:#D9D9D9;
+
+}
+
+#subhead{
+    color:#D9D9D9;
+    margin-top:5rem;
+    font-size: 1rem;
+    font-family: 'Helvetica Now Text Light';
+    line-height: 0.5;
+}
+
+#copyright{
+    display:none;
+}
+    
+    
 }
 

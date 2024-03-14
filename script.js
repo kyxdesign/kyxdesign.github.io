@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const customCursor = document.getElementById('custom-cursor');
 
-    document.addEventListener('mousemove', (e) => {
+    window.addEventListener('mousemove', (e) => {
         const cursorX = e.clientX;
         const cursorY = e.clientY;
 

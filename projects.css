@@ -1,0 +1,198 @@
+#project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    gap: 1.5rem; /* Gap between grid items */
+    
+}
+
+
+.project {
+    flex: 1 0 calc(50% - 10px); /* Two projects per row with 20px gap */
+    background-color: #252525;
+    padding: 20px;
+    justify-content: space-between; /* Align items vertically */
+    height: 20rem;
+}
+
+.number {
+    font-family: 'Helvetica Now Text';
+    font-weight: bold;
+    color: #D9D9D9;
+    z-index: 1; 
+    
+}
+
+.title-project {
+    font-family: 'Helvetica Now Text Medium';
+    margin-top: 13rem;
+    color: #D9D9D9;
+    font-size: 2em;
+    letter-spacing: -0.03em;
+    z-index: 1; 
+    
+    
+}
+
+.tags {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    font-family: 'Helvetica Now Text Light';
+    color: #D9D9D9;
+    z-index: 1; 
+}
+
+.number, .title-project, .tags {
+    position: relative; /* Add this to ensure z-index works */
+    z-index: 1; 
+    /* Add any other styles for the text elements */
+}
+
+
+
+@keyframes zoom {
+    from {
+        background-size: 100%; /* Start with normal size */
+    }
+    to {
+        background-size: 120%; /* Zoom effect on hover */
+    }
+}
+
+@keyframes zoom-out {
+    from {
+        background-size: 120%; /* Start with zoomed size */
+    }
+    to {
+        background-size: 100%; /* Back to normal size when not hovering */
+    }
+}
+
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(39, 39, 39, 0), rgba(31, 31, 31, 0.906)); /* Adjust gradient colors and direction as needed */
+    pointer-events: none; /* Ensure that the overlay doesn't interfere with mouse events */
+}
+
+
+
+#project1,
+#project2,
+#project3,
+#project4 {
+    position: relative; /* Required for positioning the pseudo-element */
+    overflow: hidden;
+    background-size: 120%; /* Start with fully zoomed size */
+    background-position: center;
+    transition: background-image 0.5s ease; /* Transition effect for background image change */
+}
+
+/* Hover animation */
+#project1:hover,
+#project2:hover,
+#project3:hover,
+#project4:hover {
+    animation: zoom 0.5s ease forwards;
+}
+
+/* Zoom-out animation */
+#project1:not(:hover),
+#project2:not(:hover),
+#project3:not(:hover),
+#project4:not(:hover) {
+    animation: zoom-out 0.5s ease forwards;
+}
+
+/* Individual background images */
+#project1 {
+    background-image: url('project_thumbnails/project1.jpg');
+}
+
+#project2 {
+    background-image: url('project_thumbnails/project2.jpg');
+}
+
+#project3 {
+    background-image: url('project_thumbnails/project3.jpg');
+}
+
+#project4 {
+    background-image: url('project_thumbnails/project4.jpg');
+}
+
+
+
+
+@media screen and (max-width: 750px) {
+
+    #project-container {
+        grid-template-columns: repeat(1, 1fr); /* 3 columns */
+
+    
+    }
+
+    #paragraph {
+   
+
+        width: 100%;
+
+    }
+
+    #buttons-container {
+        width: 100%;
+    
+    }
+
+    #paragraph-container {
+  
+        margin-top: 5rem;
+        height: 20rem;
+    }
+
+    #buttons-container {
+        line-height: 2rem;
+        width: 100%;
+        display: flex;
+       flex-direction: column;
+
+    
+    }
+
+    #footer-logo{
+        margin-top: 3rem;
+        height: 5rem;
+    }
+    
+    #message, #cv {
+        color: #D9D9D9;
+        font-family: 'Helvetica Now Text Light';
+       font-size: 1rem;
+        
+    }
+
+    
+#heading{
+    font-size: 2rem;
+    color:#D9D9D9;
+
+}
+
+#subhead{
+    color:#D9D9D9;
+    margin-top:5rem;
+    font-size: 1rem;
+    font-family: 'Helvetica Now Text Light';
+    line-height: 0.5;
+}
+
+#copyright{
+    display:none;
+}
+    
+    
+}
+
