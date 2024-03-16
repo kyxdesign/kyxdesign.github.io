@@ -3,8 +3,68 @@
 
 body {
     font-family: 'Helvetica Now Text'; 
+     text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#fullscreen-menu .menu-content a,
+#fullscreen-menu #exit-menu {
+    color: #D9D9D9;
     
 }
+
+
+#fullscreen-menu {
+   
+    text-decoration: none;
+    position: fixed;
+    top: 0;
+    
+    left: 0;
+    width: 50%;
+    margin-left: 50%;
+    height: 100%;
+    background-color: rgb(20, 20, 20);
+    font-family: 'Helvetica Now Text'; 
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+    z-index: 10000;
+    color:#D9D9D9;
+    
+   
+}
+
+.menu-content {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2.5%;
+    color:#D9D9D9;
+    height: 100%;
+    font-size: 5rem;
+   
+}
+
+#button:hover {
+  text-decoration: underline;
+ 
+  
+}
+
+#exit-menu {
+    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color:#D9D9D9;
+    margin-right: 2.5%;
+}
+
 
 
 

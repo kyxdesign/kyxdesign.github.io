@@ -1,3 +1,15 @@
+#title-project {
+    color: #D9D9D9;
+    width: 100%;
+    margin-left: -0.5%;
+   
+    height: clamp(2rem,6rem,8rem,10rem);
+    font-family: 'Helvetica Now Text Medium';
+    letter-spacing: -0.06em;
+    font-size: clamp(5.5vh, 11.7vw, 13vh); 
+   
+}
+
 #image{
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -25,5 +37,145 @@
     color: #D9D9D9;
     letter-spacing: -0.03em;
     font-size: 1.4rem;
-    line-height: 1.5em;
+    line-height: 1.4em;
+}
+
+
+
+#subZ{
+    display: inline-flex;
+    font-family: 'Helvetica Now Text';
+    color: #D9D9D9;
+    
+   
+}
+
+
+#subs1{
+    font-size: 0.9rem;
+ 
+    width: 50%;
+    font-family: 'Helvetica Now Text';
+    margin-top: clamp(-2rem, 2vw, 2rem); /* Adjust the values as needed */
+}
+#subs2{
+    font-size: 0.9rem;
+  
+    width: 15%;
+    font-family: 'Helvetica Now Text';
+    margin-top: clamp(-2rem, 2vw, 2rem); /* Adjust the values as needed */
+}
+
+#subs3{
+
+    font-size: 0.9rem;
+    width: 30%;
+ 
+    font-family: 'Helvetica Now Text';
+    margin-top: clamp(-2rem, 2vw, 2rem); /* Adjust the values as needed */
+}
+
+
+#desc{
+    display: inline-flex;
+    font-family: 'Helvetica Now Text';
+    color: #D9D9D9;
+    letter-spacing: -0.06em;
+    font-size: 1.5rem;
+   
+}
+
+
+#desc1{
+
+    width: 50%;
+
+    
+}
+#desc2{
+ 
+    width: 15%;
+
+    
+}
+
+#desc3{
+    width: 30%;
+
+
+    
+}
+
+.content-container {
+    display: none;
+    flex-direction: column;
+    color: #D9D9D9;
+}
+
+.content-row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ccc; /* Add border between rows */
+}
+
+.content-title {
+    font-size: 0.9rem;
+  line-height: 0rem;
+    font-family: 'Helvetica Now Text';
+    
+}
+
+.content-text {
+    text-align:start;
+   
+    font-family: 'Helvetica Now Text';
+    color: #D9D9D9;
+    letter-spacing: -0.06em;
+    font-size: 1.5rem;
+    transform: translateY(-1rem);
+}
+
+.content-row {
+    flex-direction: column;
+    border: none; /* Remove border between rows on mobile */
+}
+
+.content-title {
+    text-align: left; /* Center align titles on mobile */
+}
+
+#service{
+    line-height: 0.5rem;
+}
+
+
+
+
+
+@media screen and (max-width: 750px) {
+
+#subZ{
+    display: none;
+}
+
+#desc{display: none;}
+
+.content-container{
+    display: flex;
+}
+#title-project {
+    margin-bottom: 2rem;
+}
+
+#article{
+width: 100%;
+}
+
+.article-wrapper{
+    width: 100%;
+    display: block;
+
+}
+
+
 }

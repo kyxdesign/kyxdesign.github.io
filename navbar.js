@@ -1,5 +1,4 @@
-
-function loadNavbar() {
+function loadNavbar(callback) {
     // Create a new XMLHttpRequest object
     var xhr = new XMLHttpRequest();
 
@@ -15,9 +14,41 @@ function loadNavbar() {
 
             // Insert the navbar HTML into the header element of the current page
             document.querySelector('header').innerHTML = navbarHtml;
+
+            // Function to open the fullscreen menu
+            function openFullscreenMenu() {
+                var fullscreenMenu = document.getElementById('fullscreen-menu');
+                // Remove the display: none property
+                fullscreenMenu.style.display = 'block';
+            }
+
+            // Function to close the fullscreen menu
+            function closeFullscreenMenu() {
+                var fullscreenMenu = document.getElementById('fullscreen-menu');
+                // Add the display: none property
+                fullscreenMenu.style.display = 'none';
+            }
+
+            // Add event listener to the open button
+            var openButton = document.getElementById('button-open');
+            if (openButton) {
+                openButton.addEventListener('click', openFullscreenMenu);
+            }
+
+            // Add event listener to the exit button
+            var exitButton = document.getElementById('exit-menu');
+            if (exitButton) {
+                exitButton.addEventListener('click', closeFullscreenMenu);
+            }
+
+            // Call the callback function to execute additional actions
+            if (typeof callback === 'function') {
+                callback();
+            }
         }
     };
- // Send the request to load the navbar HTML
+    
+    // Send the request to load the navbar HTML
     xhr.send();
 }
 
