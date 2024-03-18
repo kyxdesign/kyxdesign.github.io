@@ -217,7 +217,7 @@ text-decoration: underline;
 footer {
     
    
-    background-color: #101010;
+    background-color: #101010;;
     height: 25rem;
     width: 100% ;
     display:flex;
@@ -347,6 +347,14 @@ footer {
     display:none;
 }
     
-    
+#right{
+    display: none;
+}    
+
+body{
+    overflow-x: hidden;
+}
+
+
 }
 
