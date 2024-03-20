@@ -22,7 +22,7 @@ a {
     text-decoration: none;
     position: fixed;
     top: 0;
-    
+    display: none;
     left: 0;
     width: 50%;
     margin-left: 50%;

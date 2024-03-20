@@ -15,31 +15,8 @@ function loadNavbar(callback) {
             // Insert the navbar HTML into the header element of the current page
             document.querySelector('header').innerHTML = navbarHtml;
 
-            // Function to open the fullscreen menu
-            function openFullscreenMenu() {
-                var fullscreenMenu = document.getElementById('fullscreen-menu');
-                // Remove the display: none property
-                fullscreenMenu.style.display = 'block';
-            }
-
-            // Function to close the fullscreen menu
-            function closeFullscreenMenu() {
-                var fullscreenMenu = document.getElementById('fullscreen-menu');
-                // Add the display: none property
-                fullscreenMenu.style.display = 'none';
-            }
-
-            // Add event listener to the open button
-            var openButton = document.getElementById('button-open');
-            if (openButton) {
-                openButton.addEventListener('click', openFullscreenMenu);
-            }
-
-            // Add event listener to the exit button
-            var exitButton = document.getElementById('exit-menu');
-            if (exitButton) {
-                exitButton.addEventListener('click', closeFullscreenMenu);
-            }
+            // Call the function to set up event listeners
+            setupEventListeners();
 
             // Call the callback function to execute additional actions
             if (typeof callback === 'function') {
@@ -50,6 +27,41 @@ function loadNavbar(callback) {
     
     // Send the request to load the navbar HTML
     xhr.send();
+}
+
+function setupEventListeners() {
+    // Function to open the fullscreen menu
+    function openFullscreenMenu() {
+        var fullscreenMenu = document.getElementById('fullscreen-menu');
+        var overlay = document.getElementById('fullscreen-overlay');
+        // Show the fullscreen menu and overlay
+        fullscreenMenu.style.display = 'block';
+        overlay.style.display = 'block';
+    }
+
+    // Function to close the fullscreen menu
+    function closeFullscreenMenu() {
+        var fullscreenMenu = document.getElementById('fullscreen-menu');
+        var overlay = document.getElementById('fullscreen-overlay');
+        // Hide the fullscreen menu and overlay
+        fullscreenMenu.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+
+    // Add event listener to all elements on the page
+    document.addEventListener('click', function(event) {
+        // Check if the clicked element contains the icon "☰"
+        if (event.target.textContent.includes('☰')) {
+            // Open the fullscreen menu
+            openFullscreenMenu();
+        }
+    });
+
+    // Add event listener to the exit button
+    var exitButton = document.getElementById('exit-menu');
+    if (exitButton) {
+        exitButton.addEventListener('click', closeFullscreenMenu);
+    }
 }
 
 // Call the loadNavbar function to load the navbar onto the page
