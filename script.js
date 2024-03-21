@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to reset cursor size
     const resetCursorSize = () => {
         // Reset cursor size
-        customCursor.style.width = '0rem';
-        customCursor.style.height = '0rem';
+        customCursor.style.width = '1rem';
+        customCursor.style.height = '1rem';
     };
 
     // Add event listeners to clickable elements

@@ -61,9 +61,25 @@ body {
 
 
 
+#title {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Align items vertically */
+}
+#logoimg img{
+    max-height: 10vb;
+    margin-left: 3vb;
+    margin-right: 3vb;
+}
 
 
+port{
+    font-style: italic;
+    text-decoration: underline;
+}
 
+#design {
+    margin-top: 10px; /* Adjust margin as needed */
+}
 
 
 body.animate .start {
@@ -95,7 +111,7 @@ body.animate .start {
     display: flex;
     flex-direction: column;
 
-    margin-top: 7rem;
+    margin-top: 6rem;
 
    
     margin-bottom: 2.5%;
@@ -124,6 +140,7 @@ body.animate .start {
   }
   
   #title {
+    line-height: 0.9;
     color: #d1d1cc;
     width: 100%;
     margin-left: -0.5%;
@@ -131,12 +148,72 @@ body.animate .start {
     font-family: 'Helvetica Now Text';
     letter-spacing: -0.06em; 
     font-size: clamp(5.5vh, 11.7vw, 13vh);
-    animation: moveAndFade 8s infinite; /* Moves up and fades in and out every 5 seconds */
+    border-bottom: 1px solid #838383;
   }
+
+
   
-  #title .delayed {
-    animation-delay: 2s;
-  }
+  #title-line2 {
+ 
+    line-height: 0.9;
+    color: #d1d1cc;
+    width: 100%;
+    margin-left: auto; /* Align to the right */
+    font-family: 'Helvetica Now Text';
+    letter-spacing: -0.06em;
+    font-size: clamp(5.5vh, 11.7vw, 13vh);
+    text-align: right;
+    border-bottom: 1px solid #838383;
+}
+
+#kyx-container {
+    overflow: hidden; /* Hide anything outside the container */
+    display: inline-block; /* Ensure container fits content */
+}
+
+#kyx {
+    animation: moveInOut 4s infinite;
+}
+
+@keyframes moveInOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  
+      20% {
+        opacity: 1;
+        transform: translateY(-100%);
+      }
+      20.001% {
+        opacity: 0;
+        transform: translateY(1000%);
+      }
+  
+      60% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+}
+
+
+
+#title-line3 {
+
+    margin-bottom:5rem;
+     line-height: 0.9;
+     color: #d1d1cc;
+     width: 100%;
+     margin-left: auto; /* Align to the right */
+     height: clamp(2rem,6rem,8rem,10rem);
+     font-family: 'Helvetica Now Text';
+     letter-spacing: -0.06em; 
+     font-size: clamp(5.5vh, 11.7vw, 13vh);
+     text-align: rigleftht;
+     border-bottom: 1px solid #838383;
+ }
+  
+
 
 #title.small {
     transform: scale(0.8); /* Adjust this value as needed for smaller scaling */
@@ -292,7 +369,7 @@ footer {
 
 
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
 
     #project-container {
         grid-template-columns: repeat(1, 1fr); /* 3 columns */
@@ -369,6 +446,32 @@ body{
     overflow-x: hidden;
 }
 
-
+#logoimg img{
+    max-height: 7vb;
+    margin-left: 3vb;
+    margin-right: 3vb;
 }
 
+}
+@media screen and (max-width: 400px) {
+#logoimg img{
+    max-height: 4vb;
+    margin-left: 0.6vb;
+    margin-right: 0.6vb;
+}
+#title{
+    margin-top: 1rem;
+}
+
+#title-line2{
+    margin-top: 1rem;
+}
+
+#title-line3{
+    margin-top: 1rem;
+}
+#landing-container{
+    margin-top: 3rem;
+}
+
+}
