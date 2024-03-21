@@ -148,7 +148,7 @@ body.animate .start {
     font-family: 'Helvetica Now Text';
     letter-spacing: -0.06em; 
     font-size: clamp(5.5vh, 11.7vw, 13vh);
-    border-bottom: 1px solid #838383;
+    border-bottom:1px solid #838383;
   }
 
 
@@ -163,7 +163,8 @@ body.animate .start {
     letter-spacing: -0.06em;
     font-size: clamp(5.5vh, 11.7vw, 13vh);
     text-align: right;
-    border-bottom: 1px solid #838383;
+    border-bottom:1px solid #838383;
+   
 }
 #title-line2 yes{
     float: left;
@@ -213,7 +214,7 @@ body.animate .start {
      height: clamp(2rem,6rem,8rem,10rem);
      font-family: 'Helvetica Now Text';
      letter-spacing: -0.06em; 
-     font-size: clamp(5.5vh, 11.7vw, 13vh);
+     font-size: clamp(3vh, 11.7vw, 13vh);
      text-align: rigleftht;
      border-bottom: 1px solid #838383;
  }
@@ -478,5 +479,7 @@ body{
 #landing-container{
     margin-top: 3rem;
 }
-
+#custom-cursor {
+display:none;
+}
 }
