@@ -4,6 +4,7 @@
 body {
     font-family: 'Helvetica Now Text'; 
      text-decoration: none;
+  
 }
 
 a {
@@ -12,7 +13,7 @@ a {
 
 #fullscreen-menu .menu-content a,
 #fullscreen-menu #exit-menu {
-    color: #D9D9D9;
+    color: #d1d1cc;
     
 }
 
@@ -32,7 +33,7 @@ a {
     overflow: hidden;
     transition: opacity 0.5s ease;
     z-index: 10000;
-    color:#D9D9D9;
+    color:#d1d1cc;
     
    
 }
@@ -43,7 +44,7 @@ a {
     flex-direction: column;
     justify-content: center;
     margin-left: 2.5%;
-    color:#D9D9D9;
+    color:#d1d1cc;
     height: 100%;
     font-size: 5rem;
    
@@ -61,12 +62,27 @@ a {
     top: 20px;
     right: 20px;
     cursor: pointer;
-    color:#D9D9D9;
+    color:#d1d1cc;
     margin-right: 2.5%;
 }
 
 
+#line{
+    transform: translateY(-2rem);
+    width: 100%;
+    position: fixed;
+    border-top: 1px solid #d1d1cc;
+    z-index: 1001;
+}
 
+#bg-nav{
+    background-color: rgb(17, 17, 17);
+    position: fixed;
+    transform: translateY(-7rem);
+    height: 5rem;
+    width: 100%;
+    z-index: 999;
+}
 
 #nav-container {
     display: flex;
@@ -82,6 +98,7 @@ a {
 
     letter-spacing: -0.05em;
     z-index: 1000; /* Ensure it's above other content */
+    
 }
 
 #nav-container-container {
@@ -94,7 +111,7 @@ header li {
 }
 
 header li a {
-    color: #D9D9D9;
+    color: #d1d1cc;
     text-decoration: none;
 }
 
