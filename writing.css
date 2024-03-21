@@ -4,7 +4,7 @@
     margin-left: -0.5%;
    
     height: clamp(2rem,6rem,8rem,10rem);
-    font-family: 'Helvetica Now Text Medium';
+    font-family: 'Helvetica Now Text';
     letter-spacing: -0.06em;
     font-size: clamp(5.5vh, 11.7vw, 13vh); 
    
@@ -26,8 +26,10 @@
 }
 
 #article-title{
-    font-family: 'Helvetica Now Text Bold';
-    font-size: 2rem;
+    font-family: 'Helvetica Now Text';
+    color: #d1d1cc;
+    letter-spacing: -0.06em;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
     color: #d1d1cc;
 }
@@ -36,7 +38,7 @@
     font-family: 'Helvetica Now Text';
     color: #d1d1cc;
     letter-spacing: -0.03em;
-    font-size: 1.4rem;
+    font-size: 1em;
     line-height: 1.4em;
 }
 

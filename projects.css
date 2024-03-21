@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('helvetica/HelveticaNowText-Regular.otf') format('opentype'); /* Specify the path to your font file */
+}
+@font-face {
+    font-family: 'Helvetica Now Text Bold';
+    src: url('helvetica/HelveticaNowText-Bold.otf') format('opentype'); /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Helvetica Now Text Medium';
+    src: url('helvetica/HelveticaNowText-Medium.otf') format('opentype'); /* Specify the path to your font file */
+}
+
+@font-face {
+    font-family: 'Helvetica Now Text Light';
+    src: url('helvetica/HelveticaNowText-Light.otf') format('opentype'); /* Specify the path to your font file */
+}
+
+
+
 #project-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 3 columns */
@@ -31,7 +52,7 @@ xd{
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
    display: flex;
-    font-family: 'Helvetica Now Text';
+    font-family: 'Helvetica Now Text Light';
     margin-top: 0rem;
     color: #d1d1cc;
     font-size: 1em;
