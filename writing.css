@@ -3,12 +3,12 @@
     color: #d1d1cc;
     width: 100%;
     margin-left: -0.5%;
-    padding-bottom: 1rem;
     height: clamp(2rem,6rem,8rem,10rem);
     font-family: 'Helvetica Now Text';
     letter-spacing: -0.06em; 
-    font-size: clamp(5.5vh, 11.7vw, 13vh);
-    border-bottom: 1px solid #838383;
+    font-size: clamp(5.5vh, 10vw, 11vh);
+    border-bottom:1px solid #838383;
+    margin-top: 0.3rem;
    
 }
 
@@ -37,10 +37,10 @@
 }
 
 #article{
-    font-family: 'Helvetica Now Text';
+    font-family: 'Helvetica Now Text Light';
     color: #d1d1cc;
     letter-spacing: -0.03em;
-    font-size: 1em;
+    font-size: 1.2em;
     line-height: 1.4em;
 }
 

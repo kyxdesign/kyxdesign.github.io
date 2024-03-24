@@ -37,13 +37,21 @@ function setupEventListeners() {
         var fullscreenMenu = document.getElementById('fullscreen-menu');
         var overlay = document.getElementById('fullscreen-overlay');
         if (fullscreenMenu.style.display === 'block') {
-            // If the menu is currently open, close it
-            fullscreenMenu.style.display = 'none';
-            overlay.style.display = 'none';
+            // If the menu is currently open, close it with animation
+            fullscreenMenu.style.transform = 'translateY(-100%)';
+            overlay.style.opacity = 0;
+            setTimeout(function() {
+                fullscreenMenu.style.display = 'none';
+                overlay.style.display = 'none';
+            }, 500); // Adjust the duration as needed
         } else {
-            // If the menu is currently closed, open it
+            // If the menu is currently closed, open it with animation
             fullscreenMenu.style.display = 'block';
             overlay.style.display = 'block';
+            setTimeout(function() {
+                fullscreenMenu.style.transform = 'translateY(0)';
+                overlay.style.opacity = 0.5; // Adjust the opacity as needed
+            }, 50); // Adjust the delay as needed
         }
     }
 

@@ -6,11 +6,24 @@ body {
 
 a {
     text-decoration: none;
+    color:#d1d1cc;
+}
+#text{
+    width: 95%;
+    border-bottom: 1px solid #707070;
+    color:#d1d1cc;
+}
+
+#text:hover{
+ background-color: #181818;
+    color:#181818;
+    filter: invert(1);
+    transition: 0.2s ;
 }
 
 #fullscreen-menu .menu-content a,
 #fullscreen-menu #exit-menu {
-    color: #d1d1cc;
+    text-decoration: none;
 }
 
 #fullscreen-menu {
@@ -22,14 +35,14 @@ a {
     width: 100%;
    
     margin-top: 2.5rem;
-    height: 97%;
+    height: 50%;
     background-color: rgb(16, 16, 16);
     border: 1px solid #707070;
     font-family: 'Helvetica Now Text'; 
     overflow: hidden;
     transition: opacity 0.5s ease;
-    z-index: 10000;
-    color: #d1d1cc;
+    z-index: 50;
+    
     text-align: left;
 
 }
@@ -37,18 +50,24 @@ a {
 
 
 .menu-content {
+    
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center-align content vertically */
     align-items: center; /* Center-align content horizontally */
-    margin-left: 2.5%;
-    color: #d1d1cc;
+ 
+   
     height: 100%;
-    font-size: 3rem;
+    font-size:  6vb;
+}
+
+.menu-content a:hover {
+text-decoration: underline;
 }
 
 #button:hover {
     text-decoration: underline;
+    position: fixed;
 }
 
 #exit-menu {
@@ -66,6 +85,7 @@ a {
     position: fixed;
     border-top: 1px solid #707070;
     z-index: 1001;
+    
 }
 
 #bg-nav {
@@ -82,22 +102,28 @@ a {
     justify-content: space-between; /* Align to the right */
     position: fixed;
     width: 100%;
+    position: fixed;
     top:0;
     z-index: 9999;
+    
 }
 
 #nav-container-container {
     flex: 1;
+    position: sticky;
 }
 
 header li {
+    position: sticky;
     list-style: none;
     line-height: 1;
     display: flex;
+    position: sticky;
     align-items: center; /* Center content vertically */
 }
 
 header li a {
+    position: sticky;
     color: #d1d1cc;
     text-decoration: none;
     padding: 0.5em; /* Add padding to create space between text and box */
@@ -111,11 +137,14 @@ header li:hover a {
 }
 
 #favicon {
+    position: sticky;
     height: 1.7rem;
     justify-content: flex-start;
+    
 }
 
 #favicon img {
+    
     height: 1.7rem; /* Set the height of the image */
 }
 ul {
@@ -212,6 +241,18 @@ li:nth-child(4) a {
     margin-left: auto;
 }
 
+#fullscreen-menu {
+    /* Your existing styles */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Add transition for transform and opacity */
+    transform: translateY(-100%); /* Initial position off-screen */
+}
+
+#fullscreen-overlay {
+    /* Your existing styles */
+    transition: opacity 0.5s ease; /* Add transition for opacity */
+    opacity: 0; /* Initial opacity */
+}
+
 @media screen and (max-width: 800px) {
     li:nth-child(2),
     li:nth-child(3) {
@@ -229,3 +270,4 @@ li:nth-child(4) a {
         margin-right: 0; /* Add margin to the right */
     }
 }
+

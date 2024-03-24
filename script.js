@@ -1,64 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const customCursor = document.getElementById('custom-cursor');
+    // Check if it's a mobile device
+    const isMobileDevice = () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    };
 
-    window.addEventListener('mousemove', (e) => {
-        const cursorX = e.clientX;
-        const cursorY = e.clientY;
+    if (!isMobileDevice()) {
+        const customCursor = document.getElementById('custom-cursor');
 
-        // Set position for custom cursor
-        customCursor.style.left = cursorX + 'px';
-        customCursor.style.top = cursorY + 'px';
-    });
+        window.addEventListener('mousemove', (e) => {
+            const cursorX = e.clientX;
+            const cursorY = e.clientY;
 
-    // Invert color function
-    const invertColor = (c) => 255 - parseInt(c, 10);
+            // Set position for custom cursor
+            customCursor.style.left = cursorX + 'px';
+            customCursor.style.top = cursorY + 'px';
+        });
 
-    // Get inverted RGB style
-    const getInvertedRGBStyle = () => {
-        const { color } = getComputedStyle(document.body);
+        // Invert color function
+        const invertColor = (c) => 255 - parseInt(c, 10);
 
-        // Function to apply color inversion
-        const invertRGB = (rgb) => rgb.replace(/\d+/g, invertColor);
+        // Get inverted RGB style
+        const getInvertedRGBStyle = () => {
+            const { color } = getComputedStyle(document.body);
 
-        // Return inverted RGB style
-        return {
-            color: color ? invertRGB(color) : 'white'
+            // Function to apply color inversion
+            const invertRGB = (rgb) => rgb.replace(/\d+/g, invertColor);
+
+            // Return inverted RGB style
+            return {
+                color: color ? invertRGB(color) : 'white'
+            };
         };
-    };
 
-    // Get inverted color styles
-    const invertedStyles = getInvertedRGBStyle();
+        // Get inverted color styles
+        const invertedStyles = getInvertedRGBStyle();
 
-    // Set custom cursor inverted color
-    customCursor.style.background = invertedStyles.color;
+        // Set custom cursor inverted color
+        customCursor.style.background = invertedStyles.color;
 
-    // Show the default cursor
-    document.body.style.cursor = 'auto';
+        // Show the default cursor
+        document.body.style.cursor = 'auto';
 
-    document.body.classList.add('animate');
+        document.body.classList.add('animate');
 
-    // Get the clickable elements
-    const clickableElements = document.querySelectorAll('a, button');
+        // Get the clickable elements
+        const clickableElements = document.querySelectorAll('a, button');
 
-    // Function to handle cursor size on hover over clickable elements
-    const handleCursorSize = (e) => {
-        // Increase cursor size by 60%
-        customCursor.style.width = '6rem';
-        customCursor.style.height = '6rem';
-    };
+        // Function to handle cursor size on hover over clickable elements
+        const handleCursorSize = (e) => {
+            // Increase cursor size by 60%
+            customCursor.style.width = '6rem';
+            customCursor.style.height = '6rem';
+        };
 
-    // Function to reset cursor size
-    const resetCursorSize = () => {
-        // Reset cursor size
-        customCursor.style.width = '1rem';
-        customCursor.style.height = '1rem';
-    };
+        // Function to reset cursor size
+        const resetCursorSize = () => {
+            // Reset cursor size
+            customCursor.style.width = '1rem';
+            customCursor.style.height = '1rem';
+        };
 
-    // Add event listeners to clickable elements
-    clickableElements.forEach((element) => {
-        element.addEventListener('mouseenter', handleCursorSize);
-        element.addEventListener('mouseleave', resetCursorSize);
-    });
-
-    
+        // Add event listeners to clickable elements
+        clickableElements.forEach((element) => {
+            element.addEventListener('mouseenter', handleCursorSize);
+            element.addEventListener('mouseleave', resetCursorSize);
+        });
+    }
 });

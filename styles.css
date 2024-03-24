@@ -176,9 +176,9 @@ body.animate .start {
     display: inline-block; /* Ensure container fits content */
 }
 
-#kyx {
-    animation: moveInOut 4s infinite;
-}
+/* #kyx {
+   animation: moveInOut 4s infinite;
+}*/
 
 @keyframes moveInOut {
     0% {
@@ -252,7 +252,7 @@ body.animate .start {
 
 
 #paragraph-container {
-  
+
     margin-top: 12rem;
     display: flex;
     flex-direction: column;
@@ -261,9 +261,9 @@ body.animate .start {
 }
 
 #paragraph {
-
-        margin-right: 2.5%;
-        padding: 20px;
+ 
+       
+       
         font-family: 'Helvetica Now Text Medium';
         width: 49rem;
         min-width: 20rem; /* Adjust the minimum width as needed */
@@ -284,7 +284,7 @@ body.animate .start {
     display: flex;
    
     margin-top: 10px; /* Adjust spacing between paragraph and buttons */
-    width: 50rem;
+    width: 49rem;
 
 }
 
@@ -313,12 +313,12 @@ text-decoration: underline;
 footer {
     
    
-    background-color: #101010;;
-    height: 25rem;
+    background-color: #151515;;
+    height: 15rem;
     width: 100% ;
     display:flex;
     flex-direction: row;
-    
+    padding-bottom: 2rem;
     
 }
 
@@ -335,24 +335,25 @@ footer {
 #heading{
     font-family: 'Helvetica Now Text Medium';
     color: #d1d1cc;
-    font-size: 2.5em;
+    font-size: 2em;
     letter-spacing: -0.05em;
 
 }
 
 #subhead{
     color:#d1d1d1;
-    margin-top:5rem;
-    font-size: 1rem;
+    margin-top:2rem;
+    font-size: 0.9rem;
     font-family: 'Helvetica Now Text Light';
     line-height: 0.5;
 }
 
 #copyright{
     font-family: 'Helvetica Now Text Light';
-    font-size: 1rem;
-    margin-top:5rem;
+    font-size: 0.8rem;
+    margin-top:2rem;
     color:#838383;
+    margin-bottom: 1rem;
 }
 
 #right{
@@ -367,7 +368,7 @@ footer {
 #footer-logo{
     margin-top: 4rem;
     margin-right: 5%;
-   height: 10rem;
+   height: 5rem;
 }
 
 
@@ -385,7 +386,6 @@ footer {
     #paragraph {
    
 
-        
         min-width: 50%;
     }
 
@@ -409,9 +409,7 @@ footer {
     
     }
 
-    #footer-logo{
-       display: none;
-    }
+
     
     #message, #cv {
         color: #d1d1cc;
@@ -424,38 +422,19 @@ footer {
 #heading{
     font-family: 'Helvetica Now Text Medium';
     color: #d1d1cc;
-    font-size: 2.5em;
+   
     letter-spacing: -0.05em;
    
    
 
 }
 
-#subhead{
-    color:#d1d1cc;
-    margin-top:5rem;
-    font-size: 1rem;
-    font-family: 'Helvetica Now Text Light';
-    line-height: 0.5;
-}
-
-#copyright{
-    display:none;
-}
-    
-#right{
-    display: none;
-}    
+ 
 
 body{
     overflow-x: hidden;
 }
 
-#logoimg img{
-    max-height: 6vb;
-    margin-left: 3vb;
-    margin-right: 3vb;
-}
 
 }
 @media screen and (max-width: 400px) {
