@@ -66,7 +66,9 @@ body {
     align-items: center; /* Align items vertically */
 }
 #logoimg img{
-    max-height: 10vb;
+    max-height: 8vb;
+
+
     margin-left: 3vb;
     margin-right: 3vb;
 }
@@ -373,8 +375,18 @@ footer {
 
 
 
+@media screen and (max-width: 700px) {
+#logoimg img{
+    max-height: 6vb;
+}
+}
 
-
+@media screen and (max-width: 600px) {
+    #logoimg img{
+        max-height: 5vb;
+    
+    }
+}
 @media screen and (max-width: 800px) {
 
     #project-container {
@@ -386,6 +398,7 @@ footer {
     #paragraph {
    
 
+        margin-left: 2.5%;
         min-width: 50%;
     }
 

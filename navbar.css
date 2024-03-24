@@ -37,7 +37,7 @@ a {
     margin-top: 2.5rem;
     height: 50%;
     background-color: rgb(16, 16, 16);
-    border: 1px solid #707070;
+    border-bottom: 1px solid #707070;
     font-family: 'Helvetica Now Text'; 
     overflow: hidden;
     transition: opacity 0.5s ease;
