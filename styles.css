@@ -167,16 +167,65 @@ body.animate .start {
     border-bottom:1px solid #838383;
    
 }
+
 #title-line2 yes{
     float: left;
     text-align: left;
+  
 }
+
+
+.collapsing-div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+    background-image: url('gifmaker_me.gif');
+    background-position: center;
+    background-size: 50%;
+   /* Change to desired background color */
+    animation: collapseAnimation 0.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+.collapsing-div.reverse {
+    animation: reverseCollapseAnimation 1s ease forwards;
+  }
+  
+  @keyframes collapseAnimation {
+    0% {
+      top: 50%;
+      height: 100%;
+    }
+    100% {
+      top: 0;
+      height: 0;
+    }
+  }
+  
+  @keyframes reverseCollapseAnimation {
+    0% {
+      top: 0;
+      height: 0;
+    }
+    100% {
+      top: 50%;
+      height: 100%;
+    }
+  }
+/* #title-line2 no{
+ 
+  
+} 
 
 
 #kyx-container {
     overflow: hidden; /* Hide anything outside the container */
-    display: inline-block; /* Ensure container fits content */
-}
+ /*   display: inline-block;  Ensure container fits content */
+
 
 /* #kyx {
    animation: moveInOut 4s infinite;
@@ -386,6 +435,13 @@ footer {
         max-height: 5vb;
     
     }
+
+    .collapsing-div {
+
+        background-size: 100%;
+
+      }
+      
 }
 @media screen and (max-width: 800px) {
 
@@ -441,8 +497,11 @@ footer {
    
 
 }
+#title-line2 yes{
+   
+    border-bottom:1px solid #838383;
+}
 
- 
 
 body{
     overflow-x: hidden;
