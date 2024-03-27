@@ -142,6 +142,7 @@ body.animate .start {
   }
   
   #title {
+    
     line-height: 0.9;
     color: #d1d1cc;
     width: 100%;
@@ -151,12 +152,16 @@ body.animate .start {
     letter-spacing: -0.05em; 
     font-size: clamp(5.5vh, 11vw, 11vh);
     border-bottom:2px solid #b9b9b9;
+    text-align-last: justify;
   }
 
 
-  
+  #kyx e{
+    font-family: 'Helvetica Now Text Bold';
+  }
+
   #title-line2 {
- 
+    text-align: justify;
     line-height: 0.9;
     color: #d1d1cc;
     width: 100%;
@@ -216,20 +221,16 @@ body.animate .start {
       height: 100%;
     }
   }
-/* #title-line2 no{
- 
-  
-} 
 
 
 #kyx-container {
-    overflow: hidden; /* Hide anything outside the container */
- /*   display: inline-block;  Ensure container fits content */
+    overflow: hidden; 
+   
+}
 
-
-/* #kyx {
-   animation: moveInOut 4s infinite;
-}*/
+#kyx{
+   animation: moveInOut 12s infinite;
+}
 
 @keyframes moveInOut {
     0% {
@@ -237,16 +238,16 @@ body.animate .start {
         transform: translateY(0);
       }
   
-      20% {
+      10% {
         opacity: 1;
         transform: translateY(-100%);
       }
-      20.001% {
+      10.001% {
         opacity: 0;
-        transform: translateY(1000%);
+        transform: translateY(100%);
       }
   
-      60% {
+      15% {
         opacity: 1;
         transform: translateY(0);
       }
@@ -314,7 +315,7 @@ body.animate .start {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center-align items horizontally */
-    height: 10rem;
+    height: 20rem;
 }
 
 #paragraph {
@@ -457,6 +458,21 @@ footer {
     
     }
 
+    #title{
+        font-size: 11vw;
+    }
+
+    #title-line2{
+        font-size: 11vw;
+    }
+
+    #kyx{
+        text-align-last: justify;
+        font-size: 10vw;
+       
+     }
+
+
     #paragraph {
    
 
@@ -504,7 +520,7 @@ footer {
 
 }
 #title-line2 yes{
-   
+    
     border-bottom:1px solid #838383;
 }
 
@@ -514,25 +530,37 @@ body{
 }
 
 #subs{
+    
     flex-direction: column;
     width: 100%;
     margin-bottom: 3rem;
 }
 #subtitle{
+  
     margin-top: 1rem;
     width: 100%;
+
 }
 
 #subtitle2{
+    
     margin-top: 1rem;
     width: 100%;
-    text-align: right;
+    text-align: justify;
 }
 
 #subcont{
     width: 100%;
+    text-align: justify;
 }
 
+yes{
+    text-align: right;
+    float: right;
+}
+#not-display{
+    display: none;
+}
 }
 @media screen and (max-width: 400px) {
 #logoimg img{
@@ -540,6 +568,7 @@ body{
     margin-left: 0.6vb;
     margin-right: 0.6vb;
 }
+
 
 
 #landing-container{
