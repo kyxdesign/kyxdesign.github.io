@@ -282,9 +282,28 @@ body.animate .start {
     font-family: 'Helvetica Now Text';
     color: #d1d1cc;
     font-size: 1rem;
-    margin-bottom: 5rem;
+   
+ 
     
 }
+
+#anim{
+    margin-bottom: 10vh;
+  
+    width: 100%;
+    animation: moveMargin 2s;
+}
+
+@keyframes moveMargin {
+    from { margin-bottom: 100vh; }
+    to { margin-bottom: 10vh; }
+}
+
+@keyframes moveMarginMobile {
+    from { margin-bottom: 100vh; }
+    to { margin-bottom: 3vh; }
+}
+
 #subcont{
     width: 50%;
 }
@@ -315,7 +334,7 @@ body.animate .start {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center-align items horizontally */
-    height: 20rem;
+
 }
 
 #paragraph {
@@ -464,6 +483,7 @@ footer {
 
     #title-line2{
         font-size: 11vw;
+        margin-bottom: 2rem;
     }
 
     #kyx{
@@ -485,11 +505,7 @@ footer {
     
     }
 
-    #paragraph-container {
-  
-        margin-top: 5rem;
-        height: 20rem;
-    }
+
 
     #buttons-container {
         line-height: 2rem;
@@ -521,7 +537,8 @@ footer {
 }
 #title-line2 yes{
     
-    border-bottom:1px solid #838383;
+    border-bottom:2px solid #c7c7c7;
+ 
 }
 
 
@@ -530,7 +547,7 @@ body{
 }
 
 #subs{
-    
+    display: none;
     flex-direction: column;
     width: 100%;
     margin-bottom: 3rem;
@@ -561,6 +578,12 @@ yes{
 #not-display{
     display: none;
 }
+
+#anim{
+    margin-bottom: 3vh;
+    animation: moveMarginMobile 2s;
+}
+
 }
 @media screen and (max-width: 400px) {
 #logoimg img{
