@@ -1,28 +1,7 @@
-@font-face {
-    font-family: 'Helvetica Now Text';
-    src: url('helvetica/HelveticaNowText-Regular.otf') format('opentype'); /* Specify the path to your font file */
-}
-@font-face {
-    font-family: 'Helvetica Now Text Bold';
-    src: url('helvetica/HelveticaNowText-Bold.otf') format('opentype'); /* Specify the path to your font file */
-}
-
-@font-face {
-    font-family: 'Helvetica Now Text Medium';
-    src: url('helvetica/HelveticaNowText-Medium.otf') format('opentype'); /* Specify the path to your font file */
-}
-
-@font-face {
-    font-family: 'Helvetica Now Text Light';
-    src: url('helvetica/HelveticaNowText-Light.otf') format('opentype'); /* Specify the path to your font file */
-}
-
-
-
 #project-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 3 columns */
-    gap: 1rem; /* Gap between grid items */
+    gap: 1.5rem; /* Gap between grid items */
     
 }
 
@@ -32,45 +11,33 @@
     background-color: #252525;
     padding: 20px;
     justify-content: space-between; /* Align items vertically */
-    height: 15rem;
-    
+    height: 20rem;
 }
 
 .number {
-    font-family: 'Helvetica Now Text Light';
+    font-family: 'Helvetica Now Text';
     font-weight: bold;
-    color: #d1d1cc;
+    color: #D9D9D9;
     z-index: 1; 
     
 }
 
-xd{
-    font-style: italic;
-   
-}
 .title-project {
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-   display: flex;
-    font-family: 'Helvetica Now Text Light';
-    margin-top: 0rem;
-    color: #d1d1cc;
-    font-size: 1em;
+    font-family: 'Helvetica Now Text Medium';
+    margin-top: 13rem;
+    color: #D9D9D9;
+    font-size: 2em;
     letter-spacing: -0.03em;
     z-index: 1; 
-    border-bottom: 1px solid #d1d1cc;
-    align-items: center;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
-    font-size: 0.8rem;
+    
+    
 }
 
 .tags {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    margin-top: 0.8rem;
     font-size: 0.9rem;
     font-family: 'Helvetica Now Text Light';
-    color: #d1d1cc;
+    color: #D9D9D9;
     z-index: 1; 
 }
 
@@ -121,8 +88,7 @@ xd{
     overflow: hidden;
     background-size: 120%; /* Start with fully zoomed size */
     background-position: center;
-    transition: background-image 0.5s ease; 
-    /* Transition effect for background image change */
+    transition: background-image 0.5s ease; /* Transition effect for background image change */
 }
 
 /* Hover animation */
@@ -202,7 +168,7 @@ xd{
     }
     
     #message, #cv {
-        color: #d1d1cc;
+        color: #D9D9D9;
         font-family: 'Helvetica Now Text Light';
        font-size: 1rem;
         
@@ -211,12 +177,12 @@ xd{
     
 #heading{
     font-size: 2rem;
-    color:#d1d1cc;
+    color:#D9D9D9;
 
 }
 
 #subhead{
-    color:#d1d1cc;
+    color:#D9D9D9;
     margin-top:5rem;
     font-size: 1rem;
     font-family: 'Helvetica Now Text Light';
