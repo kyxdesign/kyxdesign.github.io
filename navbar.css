@@ -1,58 +1,73 @@
-
-
-
 body {
     font-family: 'Helvetica Now Text'; 
-     text-decoration: none;
+    text-decoration: none;
+    margin: 0; /* Remove default margin */
 }
 
 a {
     text-decoration: none;
+    color:#d1d1cc;
+}
+#text{
+    width: 95%;
+    border-bottom: 1px solid #707070;
+    color:#d1d1cc;
+}
+
+#text:hover{
+ background-color: #181818;
+    color:#181818;
+    filter: invert(1);
+    transition: 0.2s ;
 }
 
 #fullscreen-menu .menu-content a,
 #fullscreen-menu #exit-menu {
-    color: #D9D9D9;
-    
+    text-decoration: none;
 }
 
-
 #fullscreen-menu {
-   
     text-decoration: none;
     position: fixed;
     top: 0;
     display: none;
     left: 0;
-    width: 50%;
-    margin-left: 50%;
-    height: 100%;
-    background-color: rgb(20, 20, 20);
+    width: 100%;
+   
+    margin-top: 2.5rem;
+    height: 50%;
+    background-color: rgb(16, 16, 16);
+    border-bottom: 1px solid #707070;
     font-family: 'Helvetica Now Text'; 
     overflow: hidden;
     transition: opacity 0.5s ease;
-    z-index: 10000;
-    color:#D9D9D9;
+    z-index: 50;
     
-   
+    text-align: left;
+
 }
 
+
+
 .menu-content {
-  
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 2.5%;
-    color:#D9D9D9;
-    height: 100%;
-    font-size: 5rem;
+    justify-content: center; /* Center-align content vertically */
+    align-items: center; /* Center-align content horizontally */
+ 
    
+    height: 100%;
+    font-size:  6vb;
+}
+
+.menu-content a:hover {
+text-decoration: underline;
 }
 
 #button:hover {
-  text-decoration: underline;
- 
-  
+    text-decoration: underline;
+    position: fixed;
 }
 
 #exit-menu {
@@ -61,110 +76,198 @@ a {
     top: 20px;
     right: 20px;
     cursor: pointer;
-    color:#D9D9D9;
-    margin-right: 2.5%;
+    color: #d1d1cc;
 }
 
+#line {
+    transform: translateY(-3.5rem);
+    width: 100%;
+    position: fixed;
+    border-top: 1px solid #707070;
+    z-index: 1001;
+    
+}
 
-
+#bg-nav {
+    position: fixed;
+    transform: translateY(-8.5rem);
+    height: 5rem;
+    width: 100%;
+    z-index: 999;
+}
 
 #nav-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Align to the right */
     position: fixed;
-    top: 0;
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
-    width: 95%;
-    font-size: 0.75rem;
-
-    letter-spacing: -0.05em;
-    z-index: 1000; /* Ensure it's above other content */
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+    
 }
 
 #nav-container-container {
-    flex: 1; /* Fill remaining space */
+    flex: 1;
+    position: sticky;
 }
 
 header li {
+    position: sticky;
     list-style: none;
     line-height: 1;
+    display: flex;
+    position: sticky;
+    align-items: center; /* Center content vertically */
 }
 
 header li a {
-    color: #D9D9D9;
+    position: sticky;
+    color: #d1d1cc;
     text-decoration: none;
+    padding: 0.5em; /* Add padding to create space between text and box */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
-
+header li:hover a {
+    color: #181818;
+    
+}
 
 #favicon {
-    transform: scale(0.85);
+    position: sticky;
+    height: 1.7rem;
     justify-content: flex-start;
+    
 }
 
+#favicon img {
+    
+    height: 1.7rem; /* Set the height of the image */
+}
 ul {
-    width: 69%;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%;
+    display: flex;
+
+}
+li {
+    font-size: 0.75rem;
+    background-color: #101010;
+    flex: 1;
+    border-bottom: 1px solid #707070;
+ /*  border-left: 1px solid #707070; */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    height: 2.5rem; /* Set height of the li elements */
+    overflow: hidden; /* Hide overflow content */
+    position: relative; /* Required for absolute positioning */
+    color: #d1d1cc; /* Default text color */
+    z-index: 10;
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off screen */
+    width: 100%;
+    height: 100%;
+    background-color: #191919; /* Initial background color */
+    transition: left 0.3s ease, background-color 0.3s ease; /* Transition left and background-color properties */
+    z-index: -1; /* Ensure the pseudo-element is behind the text */
+}
+
+li:hover::before {
+    left: 0; /* Slide in from left */
+    background-color: #dfdfdf; /* Change background color on hover */
+}
+
+li:hover {
+    cursor: pointer;
+    color: #181818; /* Change text color to black on hover */
+}
+
+li:hover::before,
+li:not(:hover)::before {
+    transition: left 0.3s ease, background-color 0.3s ease; /* Smooth transition for both hover start and end */
+}
+
+li:not(:last-child) {
+    border-right: none;
     display: flex;
 }
 
-li:nth-child(1) {
-    width: 50%;
+/* Update the CSS for the first child to take up 75% of the width */
+li:first-child {
+    flex: 0 0 75%; /* Make the first child take up 75% of the width */
+    text-align: left; /* Align text to the left */
+    border-left: none;
 }
 
-li:nth-child(2) {
-    width: 33.33%;
+/* Update the CSS for the text to be aligned to the right */
+li:not(:first-child) {
+    text-align: right; /* Align text to the right */
 }
 
-li:nth-child(3) {
-    width: 33.33%;
-    text-align: right;
+li:first-child a {
+    margin-right: 1%; /* Add margin to the right */
 }
 
-li a:hover {
-    text-decoration: underline;
-}
-li:nth-child(4) {
-    width: 100%;
-    text-align: right;
-    display: none;
+li:nth-child(5) {
+    display: none; /* Hide the fifth child */
 }
 
-@media screen and (max-width: 750px) {
+#nav-container > ul > li:first-child:hover #favicon img {
+    filter: invert(100%);
+}
+li:nth-child(2) a {
+    margin-right: auto;
+    margin-left: auto;
+}
 
-    li:nth-child(1) {
-       
-        display: none;
-    }
-    
-    li:nth-child(2) {
-        
-        display: none;
-    }
+
+
+li:nth-child(3) a {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+li:nth-child(4) a {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#fullscreen-menu {
+    /* Your existing styles */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Add transition for transform and opacity */
+    transform: translateY(-100%); /* Initial position off-screen */
+}
+
+#fullscreen-overlay {
+    /* Your existing styles */
+    transition: opacity 0.5s ease; /* Add transition for opacity */
+    opacity: 0; /* Initial opacity */
+}
+
+@media screen and (max-width: 800px) {
+    li:nth-child(2),
     li:nth-child(3) {
-        
-        display: none;
+        display: none; /* Hide the second and third child on small screens */
+    }
+    li:nth-child(4) a {
+        margin-left: auto; /* Align the text of the fourth child to the left */
+        margin-right: 0.5rem; /* Add margin to the right */
+    }
+    li {
+        border-left: none; /* Remove the left border for all list items */
     }
 
-
-    li:nth-child(4) {
-        width: 100%;
-        text-align: right;
-        display: block;
-        font-size: 2.4rem;
-        line-height:1.2;
+    li:first-child a {
+        margin-right: 0; /* Add margin to the right */
     }
-
-    li a:hover {
-        text-decoration: none;
-    }
-
-    #favicon {
-        transform: scale(0.85) translateY(15%);
-    }
-
-
-    
 }
+
