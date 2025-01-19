@@ -16,25 +16,45 @@
 	const xAxis = new THREE.Vector3(1, 0, 0);
 	
 	let pointNo = 0;
+	let trackCount = 0;
+
+	function updateTrackCount() {
+		document.getElementById('track-count').textContent = `Tracks Placed: ${trackCount}`;
+	}
 
 	function addLoop(container) {
 		const count = 8;
 		const radius = 0.8;
 		const width = 0.5;
-		for (let i=0; i<count; i++) {
+		for (let i = 0; i < count; i++) {
 			const el = document.createElement('a-curve-point');
-			const x = radius * Math.sin(Math.PI - Math.PI * 2 * i/count);
-			const y = radius + radius * Math.cos(Math.PI - Math.PI * 2 * i/count);
-			el.setAttribute('position', `${0.2 + x} ${y} ${i*width/count}`);
+			const x = radius * Math.sin(Math.PI - Math.PI * 2 * i / count);
+			const y = radius + radius * Math.cos(Math.PI - Math.PI * 2 * i / count);
+			el.setAttribute('position', `${0.2 + x} ${y} ${i * width / count}`);
 			container.appendChild(el);
+			trackCount++;
+			updateTrackCount();
 		}
 	}
+
+	function showGoBackButton() {
+		document.getElementById('go-back').style.display = 'block';
+	}
+
+	function goBack() {
+		alert("Returning to main screen..."); // Placeholder for navigation logic
+		document.getElementById('go-back').style.display = 'none';
+		trackCount = 0;
+		updateTrackCount();
+	}
+
 	(function () {
 		const loopParent = document.getElementById('loophere');
 		addLoop(loopParent);
+		showGoBackButton(); // Show button after loop is added
 	}());
 
-	function hitTestSelect () {
+	function hitTestSelect() {
 		const lastPlacedPoint = sceneEl.getAttribute('ar-hit-test').target;
 		const endPointPosition = endPoint.object3D.getWorldPosition(__tempVec1);
 		const lastPointPosition = lastPlacedPoint.object3D.getWorldPosition(__tempVec2);
@@ -44,7 +64,7 @@
 		) {
 			message.innerHTML = '';
 			lastPlacedPoint.remove();
-			curveEl.setAttribute('closed',  true);
+			curveEl.setAttribute('closed', true);
 			sceneEl.setAttribute('ar-hit-test', 'enabled', false);
 			endPointCircle.setAttribute('visible', false);
 			cart.components['roller-coaster'].t = 0;
@@ -52,12 +72,13 @@
 			cart.setAttribute('visible', true);
 		}
 	}
+
 	sceneEl.addEventListener('enter-vr', function () {
 		if (this.is('ar-mode')) {
 			message.textContent = '';
 			endPointCircle.setAttribute('visible', true);
 
-			curveEl.setAttribute('closed',  false);
+			curveEl.setAttribute('closed', false);
 			for (const el of document.querySelectorAll('.sample')) {
 				el.remove();
 			}
@@ -76,13 +97,12 @@
 				const el = document.createElement('a-curve-point');
 				const p = lastPlacedPoint.object3D.position;
 				curveEl.pause();
-				const o = __tempVec1.set(0,0,0.5).applyQuaternion(lastPlacedPoint.object3D.quaternion);
+				const o = __tempVec1.set(0, 0, 0.5).applyQuaternion(lastPlacedPoint.object3D.quaternion);
 				el.setAttribute('gltf-model', "#flag-glb");
 				el.setAttribute('position', `${p.x + o.x} ${p.y + o.y} ${p.z + o.z}`);
 				el.setAttribute('scale', `0.4 0.4 0.4`);
-				el.id=id;
+				el.id = id;
 				curveEl.appendChild(el);
-				// pause the curve updating until we have placed the new way point
 				this.setAttribute('ar-hit-test', 'target', '#' + id);
 				waypointStack.push(el);
 			}.bind(this);
@@ -93,7 +113,7 @@
 					this.setAttribute('ar-hit-test', 'target', '#station');
 					this.removeEventListener('ar-hit-test-select', hitTestSelect);
 					this.removeEventListener('ar-hit-test-select-start', nextFn);
-					this.addEventListener('ar-hit-test-select', placeStation, {once: true});
+					this.addEventListener('ar-hit-test-select', placeStation, { once: true });
 				} else {
 					waypointStack.pop().remove();
 				}
@@ -113,7 +133,7 @@
 					newEl.object3D.position.copy(position);
 					newEl.object3D.scale.copy(scale);
 					newEl.object3D.quaternion.setFromUnitVectors(xAxis, tangent);
-				}, {once:true});
+				}, { once: true });
 				currentPoint.parentNode.appendChild(newEl);
 				currentPoint.parentNode.removeChild(currentPoint);
 				waypointStack.push(newEl);
@@ -127,12 +147,12 @@
 				
 				const buttons = document.createElement('div');
 				message.appendChild(buttons);
-	
+
 				const undo = document.createElement('button');
 				undo.textContent = 'Undo';
 				undo.addEventListener('click', undoFn);
 				buttons.appendChild(undo);
-	
+
 				const loopALoop = document.createElement('button');
 				loopALoop.textContent = 'Loop-A-Loop';
 				loopALoop.addEventListener('click', loopALoopFn);
@@ -142,7 +162,7 @@
 					e.preventDefault();
 				});
 			};
-			this.addEventListener('ar-hit-test-select', placeStation , {once: true});
+			this.addEventListener('ar-hit-test-select', placeStation, { once: true });
 		}
 	});
 
